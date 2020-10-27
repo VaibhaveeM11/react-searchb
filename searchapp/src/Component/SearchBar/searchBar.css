@@ -1,0 +1,26 @@
+/* No CSS *//*# sourceMappingURL=searchBar.css.map */
+.search-card
+{
+    background-color: blanchedalmond;
+    position: fixed;
+    left: 330px;
+    top:20px;
+    width:500px;
+    height: 300px;
+}
+#search-input
+{
+
+    width: 40%;
+    position: relative;
+    top:100px;
+    height: 40px;
+}
+#search-button
+{
+    background-color: royalblue; 
+    color:white;
+    position: relative;
+    padding: 15px;
+     top:100px;
+}
