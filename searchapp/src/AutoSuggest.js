@@ -26,7 +26,7 @@ class AutoSuggest extends React.Component {
             suggestions= this.items.sort().filter(v=>regex.test(v));
         }
     this.setState(()=>({suggestions,text:value}));
-    console.log('v');
+   
 }
 
     suggestedSelected(value)
@@ -35,7 +35,7 @@ class AutoSuggest extends React.Component {
          text: value,
          suggestions: [],
      }));
-     console.log('u');
+    
 
     }
     renderSuggest(){
@@ -46,7 +46,7 @@ class AutoSuggest extends React.Component {
         }
         return(
         <ul>
-                    console.log('s');
+                   
 
             {suggestions.map((item)=><li onClick={()=>this.suggestedSelected(item)}>{item}</li>)}
         </ul>   );  
