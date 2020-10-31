@@ -1,0 +1,36 @@
+.autodiv
+{
+     position: relative;
+     top: 120px;
+    width: '70%';
+    border: 1px gray solid;
+    box-shadow: 1px 2px 3px grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.autodiv input{
+    width: '60%';
+    border: none;
+    /* padding: 20px; */
+    padding:10px 5px;
+    box-sizing: border-box;
+   outline: none;
+   font-size: 14px;
+}
+.autodiv ul{
+    list-style: none;
+    text-align: left;
+    margin:0 ;
+    padding:0;
+    border-top: 1px solid gray;
+}
+.autodiv ul::before{
+    content: '';
+}
+.autodiv li{
+    padding:10px 5px;
+    cursor: pointer;
+}
+.autodiv li:hover{
+    text-decoration: underline;
+    background-color: rgb(128, 128, 128,0.20);
+}
