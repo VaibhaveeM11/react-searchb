@@ -1,14 +1,17 @@
 import React from 'react';
 import './AutoSuggest.css';
+import bg from './images/bg.png'
 class AutoSuggest extends React.Component {
     constructor(props) {
         super(props);
         this.items=[
-            'Vaibha',
-            'Zenatix',
-            'Zenatix',
+            'Zenatix,Gurguram',
+            'Zenatix ,Gurgaon',
              'Gurgaon',
-             'Gurguram'
+             'Gurguram',
+             'Zenatix,address',
+             'Zenatix Spaze I-Tech Park 436A, TSector - 49, Sohna Road'
+
             ];
 
         this.state = {  
@@ -17,9 +20,9 @@ class AutoSuggest extends React.Component {
         };
      }
 
-    onValueChange=(e)=>{
+    onValueChange= (e) =>{
         const value = e.target.value;
-        let suggestions=[];
+        let suggestions= [];
         if(value.length > 0)
         {
            const regex= new RegExp(`^${value}`,'i');
@@ -46,9 +49,7 @@ class AutoSuggest extends React.Component {
         }
         return(
         <ul>
-                   
-
-            {suggestions.map((item)=><li onClick={()=>this.suggestedSelected(item)}>{item}</li>)}
+            {suggestions.map((item)=><li className='Searchli' onClick={()=>this.suggestedSelected(item)}><div>{item}</div></li>)}
         </ul>   );  
   
     }
@@ -58,11 +59,12 @@ class AutoSuggest extends React.Component {
         const {text}=this.state;
         return (  
         <div className='autodiv'>
+        <img src={bg} id='searchbg'></img>
         <input type='text' 
             value={text} 
             placeholder='Search here....'
              onChange={this.onValueChange}/>
-           {this.renderSuggest}
+           {this.renderSuggest()}
         </div>);
     }
 }
