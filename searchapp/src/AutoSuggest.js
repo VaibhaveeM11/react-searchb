@@ -3,7 +3,14 @@ import './AutoSuggest.css';
 class AutoSuggest extends React.Component {
     constructor(props) {
         super(props);
-        this.items=['Vaibha','Zenatix','zenatix', 'gurgaon','gurguram'];
+        this.items=[
+            'Vaibha',
+            'Zenatix',
+            'Zenatix',
+             'Gurgaon',
+             'Gurguram'
+            ];
+
         this.state = {  
             suggestions:[],
             text:'',
@@ -19,14 +26,17 @@ class AutoSuggest extends React.Component {
             suggestions= this.items.sort().filter(v=>regex.test(v));
         }
     this.setState(()=>({suggestions,text:value}));
+    console.log('v');
 }
 
     suggestedSelected(value)
     {
      this.setState(()=>({
-         text:value,
-         suggestions:[],
+         text: value,
+         suggestions: [],
      }));
+     console.log('u');
+
     }
     renderSuggest(){
         const {suggestions} = this.state;
@@ -36,8 +46,11 @@ class AutoSuggest extends React.Component {
         }
         return(
         <ul>
-            {suggestions.map((item)=><li onClick={this.suggestedSelected(item)}>{item}</li>)}
-        </ul>   );    
+                    console.log('s');
+
+            {suggestions.map((item)=><li onClick={()=>this.suggestedSelected(item)}>{item}</li>)}
+        </ul>   );  
+  
     }
 
     
